@@ -230,6 +230,11 @@ header {
             color: $accent-grey;
             font-size: 1.3rem;
             font-weight: 700;
+            transition: 0.3s;
+            align-self: flex-start;
+            &:hover {
+              color: white;
+            }
           }
         }
       }
@@ -509,6 +514,12 @@ header {
             color: $accent-grey;
             font-size: 1.3rem;
             font-weight: 700;
+            align-self: flex-start;
+            transition: 0.3s;
+
+            &:hover {
+              color: white;
+            }
           }
         }
       }

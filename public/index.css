@@ -198,6 +198,11 @@ header ul li a:hover::after {
     color: #9c9c9c;
     font-size: 1.3rem;
     font-weight: 700;
+    transition: 0.3s;
+    align-self: flex-start;
+  }
+  #projects .project-list .project-list-row .project a:hover {
+    color: white;
   }
   #blog {
     display: flex;
@@ -440,6 +445,11 @@ header ul li a:hover::after {
     color: #9c9c9c;
     font-size: 1.3rem;
     font-weight: 700;
+    align-self: flex-start;
+    transition: 0.3s;
+  }
+  #projects .project-list .project-list-row .project a:hover {
+    color: white;
   }
   #blog {
     display: flex;
