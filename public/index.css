@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -10,24 +14,40 @@ body {
   box-sizing: border-box;
 }
 
+header {
+  padding: 0 12%;
+  display: flex;
+  align-items: center;
+  gap: 20%;
+  background-image: linear-gradient(to bottom, rgb(21, 21, 21), rgba(0, 0, 0, 0));
+  position: sticky;
+  top: 0;
+}
+header ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  list-style: none;
+}
+header ul li a {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+}
+header ul li a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #5bd8a1;
+  transition: width 0.3s;
+}
+header ul li a:hover::after {
+  width: 100%;
+}
+
 @media screen and (max-width: 767px) {
-  header {
-    display: flex;
-    align-items: center;
-    padding-left: 50px;
-    padding-right: 50px;
-    gap: 20%;
-  }
-  header ul {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    list-style: none;
-  }
-  header ul li {
-    text-decoration: none;
-  }
   #home {
     padding: 50px;
     display: flex;
@@ -72,6 +92,18 @@ body {
     letter-spacing: 0.1em;
     font-weight: 500;
   }
+  #home .text .icon-list {
+    display: flex;
+    gap: 2em;
+    margin: 3em 0;
+  }
+  #home .text .icon-list a {
+    color: white;
+    transition: 0.5s;
+  }
+  #home .text .icon-list a:hover {
+    transform: scale(1.2, 1.2);
+  }
   hr {
     width: 90%;
     color: white;
@@ -106,11 +138,17 @@ body {
     align-items: center;
     margin-top: 40px;
     margin-bottom: 40px;
+    padding: 0 5%;
   }
   #projects h2 {
     font-weight: 700;
     font-size: 2.7rem;
     margin-bottom: 70px;
+  }
+  #projects #current-and-future {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 50px;
   }
   #projects .project-list .project-list-row {
     display: flex;
@@ -118,18 +156,26 @@ body {
     align-items: center;
   }
   #projects .project-list .project-list-row .project {
-    width: 90%;
+    width: 100%;
     margin-bottom: 40px;
-    height: 600px;
     display: flex;
     flex-direction: column;
   }
   #projects .project-list .project-list-row .project img {
     width: 100%;
-    object-fit: fill;
-    object-position: center;
+    max-height: 500px;
+    object-fit: cover;
+    object-position: center bottom;
     display: block;
     overflow: hidden;
+  }
+  #projects .project-list .project-list-row .project .no-pic {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
   }
   #projects .project-list .project-list-row .project h3 {
     margin-top: 15px;
@@ -146,6 +192,12 @@ body {
     margin: 0;
     color: #9c9c9c;
     font-size: 1.3rem;
+  }
+  #projects .project-list .project-list-row .project a {
+    text-decoration: none;
+    color: #9c9c9c;
+    font-size: 1.3rem;
+    font-weight: 700;
   }
   #blog {
     display: flex;
@@ -182,6 +234,18 @@ body {
     text-align: center;
     color: #9c9c9c;
     font-size: 1.2rem;
+  }
+  #contact #contact-text .icon-list {
+    display: flex;
+    gap: 2em;
+    margin: 3em 0;
+  }
+  #contact #contact-text .icon-list a {
+    color: white;
+    transition: 0.5s;
+  }
+  #contact #contact-text .icon-list a:hover {
+    transform: scale(1.2, 1.2);
   }
   #contact #contact-form {
     padding: 0 10%;
@@ -223,25 +287,6 @@ body {
   }
 }
 @media screen and (min-width: 768px) {
-  header {
-    padding: 0 12%;
-    display: flex;
-    align-items: center;
-    gap: 20%;
-    background-image: linear-gradient(to bottom, rgb(21, 21, 21), rgba(0, 0, 0, 0));
-    position: sticky;
-    top: 0;
-  }
-  ul {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    list-style: none;
-  }
-  ul li {
-    text-decoration: none;
-  }
   #home {
     padding-left: 12%;
     padding-right: 12%;
@@ -285,6 +330,18 @@ body {
     letter-spacing: 0.1em;
     font-weight: 500;
   }
+  #home .text .icon-list {
+    display: flex;
+    gap: 2em;
+    margin: 3em 0;
+  }
+  #home .text .icon-list a {
+    color: white;
+    transition: 0.5s;
+  }
+  #home .text .icon-list a:hover {
+    transform: scale(1.2, 1.2);
+  }
   hr {
     width: 76%;
     color: white;
@@ -323,6 +380,12 @@ body {
     font-size: 2.7rem;
     margin-bottom: 70px;
   }
+  #projects #current-and-future {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 80px;
+    text-align: center;
+  }
   #projects .project-list {
     display: flex;
     flex-direction: column;
@@ -336,17 +399,25 @@ body {
   }
   #projects .project-list .project-list-row .project {
     width: 50%;
-    height: 600px;
     min-height: 0;
     display: flex;
     flex-direction: column;
   }
   #projects .project-list .project-list-row .project img {
     width: 100%;
-    object-fit: fill;
-    object-position: center;
+    max-height: 450px;
+    object-fit: cover;
+    object-position: center bottom;
     display: block;
     overflow: hidden;
+  }
+  #projects .project-list .project-list-row .project .no-pic {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
   }
   #projects .project-list .project-list-row .project h3 {
     margin-top: 15px;
@@ -364,11 +435,17 @@ body {
     color: #9c9c9c;
     font-size: 1.3rem;
   }
+  #projects .project-list .project-list-row .project a {
+    text-decoration: none;
+    color: #9c9c9c;
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
   #blog {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin: 50px;
+    margin: 50px 0;
+    padding: 0 12%;
   }
   #blog h2 {
     font-weight: 700;
@@ -395,6 +472,18 @@ body {
     color: #9c9c9c;
     font-size: 1.2rem;
   }
+  #contact #contact-text .icon-list {
+    display: flex;
+    gap: 2em;
+    margin: 3em 0;
+  }
+  #contact #contact-text .icon-list a {
+    color: white;
+    transition: 0.5s;
+  }
+  #contact #contact-text .icon-list a:hover {
+    transform: scale(1.2, 1.2);
+  }
   #contact #contact-form {
     margin-top: 30px;
     margin-bottom: 30px;
@@ -416,6 +505,7 @@ body {
   }
   #contact #contact-form input:focus {
     outline: none;
+    border-bottom: 2px solid #5bd8a1;
   }
   #contact #contact-form button {
     margin-left: auto;

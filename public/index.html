@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>hongthedoge</title>
   <link rel="stylesheet" href="./index.css">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
 </head>
 
 <body>
@@ -13,10 +14,10 @@
   <header>
     <h3> hongthedoge </h3>
     <ul>
-      <li>skills</li>
-      <li>projects</li>
-      <li>blog</li>
-      <li>contact</li>
+      <li><a href="#skills">skills</a></li>
+      <li><a href="#projects">projects</a></li>
+      <li><a href="#blog">blog</a></li>
+      <li><a href="#contact">contact</a></li>
     </ul>
   </header>
 
@@ -33,9 +34,15 @@
         Currently studying computer science in Monash University Malaysia.
       </p>
 
-      <button>
-        CONTACT ME
-      </button>
+      <div class="icon-list">
+
+        <a href="https://www.linkedin.com/in/kah-hong-tan-793a8b121/"><i class="fa fa-linkedin fa-2x"></i></a>
+        <a href="https://github.com/wowthedoge"><i class="fa fa-github fa-2x"></i></a>
+        <a href="mailto:honggggg2023@gmail.com"><i class="fa fa-envelope fa-2x"></i></a>
+
+        <a href="https://www.instagram.com/kahhong01/"><i class="fa fa-instagram fa-2x"></i></a>
+        
+      </div>
     </div>
   </section>
   <hr />
@@ -44,12 +51,13 @@
     <h2> SKILLS </h2>
     <ul>
       <li>HTML/CSS</li>
-      <li>JavaScript</li>
+      <li>JavaScript/TypeScript</li>
       <li>Java</li>
       <li>MySQL</li>
       <li>MongoDB</li>
       <li>React</li>
       <li>Unity/C#</li>
+      <li>Firebase</li>
     </ul>
 
   </section>
@@ -57,91 +65,122 @@
   <hr />
 
   <section id="projects">
-    <h2> PROJECTS </h2>
+    <h2> PERSONAL PROJECTS </h2>
     <div class="project-list">
 
 
       <div class="project-list-row">
 
         <div class="project">
-          <img src="./images/tinydroidspic.jpg" alt="tiny-droids-pic" draggable="false">
+          <img src="./images/tinydroidspic.jpg" draggable="false">
           <h3> TINY DROIDS </h3>
           <div class="stack">
             <h4> Unity </h4>
             <h4> C# </h4>
           </div>
           <p>
-            i hosting: ::1 - - [10/Aug/2023:04:35:19 +0000] "GET /index.js HTTP/1.1" 200 - "http://localhost:3000/" "
+            A 2D mobile shooter I made in 2021, taking about 4 months. The Unity ecosystem was
+            fun to learn. I didn't expect it to take this much work to make a game - even though
+            I downloaded the free sprites and music from somewhere, the UI, animations and
+            object physics and interactions took much longer than I thought (why is the bullet upside down??).
+            In the end, despite a few bugs it was quite a success. I had intended it to require
+            some strategy but my young cousins were perfectly happy to randomly button-mash.
           </p>
+          <a href="https://play.google.com/store/apps/details?id=com.wowthedoge.tinydroids"> VIEW ON PLAY STORE </a>
+          
+          
         </div>
 
         <div class="project">
-          <img src="./images/tinydroidspic.jpg" alt="tiny-droids-pic" draggable="false">
-          <h3> TINY DROIDS </h3>
+          <img src="./images/lifetimerpic.png" draggable="false">
+          <h3> LIFETIMER </h3>
           <div class="stack">
-            <h4> Unity </h4>
-            <h4> C# </h4>
+            <h4> Flutter </h4>
+            <h4> Dart </h4>
           </div>
           <p>
-            i hosting: ::1 - - [10/Aug/2023:04:35:19 +0000] "GET /index.js HTTP/1.1" 200 - "http://localhost:3000/" "
+            A calendar app I made with Flutter in 2020. You might have seen some people blocking in one square
+            of many on a huge canvas, saying that's the life they have lived, and the rest is the life
+            they have left. This is the same concept - Memento Mori, "remember that you will die". This
+            was my first self-made project, and works generally alright, although a bit laggy from too many
+            components (I should have used a canvas).
           </p>
+          <a href="https://play.google.com/store/apps/details?id=com.wowthedoge.lifetimer"> VIEW ON PLAY STORE </a>
         </div>
       </div>
       <div class="project-list-row">
 
         <div class="project">
-          <img src="./images/tinydroidspic.jpg" alt="tiny-droids-pic" draggable="false">
-          <h3> TINY DROIDS </h3>
+          <img src="./images/rubberduckerpic.png" draggable="false">
+          <h3> [UNFINISHED] RUBBERDUCKER </h3>
           <div class="stack">
-            <h4> Unity </h4>
-            <h4> C# </h4>
+            <h4> React </h4>
+            <h4> NodeJS </h4>
+            <h4> MongoDB </h4>
           </div>
           <p>
-            i hosting: ::1 - - [10/Aug/2023:04:35:19 +0000] "GET /index.js HTTP/1.1" 200 - "http://localhost:3000/" "
+            A mind-mapping tool that displays text in a tree-structure. I wanted this app to organize
+            complex ideas and thought-trains, kind of like GingkoWriter, for problem-solving and time tracking.
+            Anyway, I had one hell of a time trying to display the connections between the nodes with CSS,
+            but ultimately it was problems with integrating Vercel with Express and MongoDB that led me to 
+            abandon this project, along with a vague requirements and ever-changing designs from none other
+            than myself. I should properly plan my projects in the future, and also consider using serverless
+            functions.
           </p>
+          <a href="https://rubberducker.vercel.app/"> TRY IT OUT [DON'T EXPECT MUCH] </a>
         </div>
 
         <div class="project">
-          <img src="./images/tinydroidspic.jpg" alt="tiny-droids-pic" draggable="false">
-          <h3> TINY DROIDS </h3>
+          <div class="no-pic"> NO PIC SORRY </div>
+          <h3> [UNFINISHED] THINKTREE </h3>
           <div class="stack">
-            <h4> Unity </h4>
-            <h4> C# </h4>
+            <h4> TypeScript </h4>
+            <h4> React </h4>
+            <h4> Redux </h4>
           </div>
           <p>
-            i hosting: ::1 - - [10/Aug/2023:04:35:19 +0000] "GET /index.js HTTP/1.1" 200 - "http://localhost:3000/" "
+            This project was my first dig at React, after dabbling with London App Brewery's web-dev course. It's
+            a tool to simplify decision-making, which I later learned to be just an overcomplicated version of
+            the Weighted Scoring Model. I used TypeScript for this to see what it was like, and ended up learning
+            and using Redux too. In the end, it didn't bring much benefit and I had lost interest in the project,
+            but it was a good run with React.
           </p>
+          <a href="https://github.com/wowthedoge/thinktree"> VIEW ON GITHUB
+          </a>
         </div>
       </div>
       <div class="project-list-row">
 
         <div class="project">
-          <img src="./images/tinydroidspic.jpg" alt="tiny-droids-pic" draggable="false">
-          <h3> TINY DROIDS </h3>
+          <img src="./images/thissitepic.png" alt="tiny-droids-pic" draggable="false">
+          <h3> THIS WEBSITE </h3>
           <div class="stack">
-            <h4> Unity </h4>
-            <h4> C# </h4>
+            <h4> HTML/CSS </h4>
+            <h4> JavaScript </h4>
+            <h4> Firebase </h4>
           </div>
           <p>
-            i hosting: ::1 - - [10/Aug/2023:04:35:19 +0000] "GET /index.js HTTP/1.1" 200 - "http://localhost:3000/" "
+            Employers hire me please
           </p>
+          <a href="https://github.com/wowthedoge/hongthedoge"> VIEW ON GITHUB </a>
         </div>
 
+        <div class="project">
+
+          
+
+        </div>
 
       </div>
-
-
-
-
+      
+      
     </div>
-
-
-
+    <h3 id="current-and-future"> CURRENT & FUTURE PROJECTS </h3>
+    <p>More to come! I am currently working with a friend to make a platform where each university
+    class has a chat room to chat and share content. Also, I will be helping with the Exchange &
+    Study Abroad site for the university.</p>
   </section>
-
   <hr />
-
-
   <section id="blog">
     <h2> BLOG </h2>
     <h3>Blog coming soon!</h3>
@@ -154,13 +193,20 @@
     <div id="contact-text">
       <h2> CONTACT </h2>
       <p> Feel free to send me a message :&#41 </p>
+      <div class="icon-list">
+
+        <a href="https://www.linkedin.com/in/kah-hong-tan-793a8b121/"><i class="fa fa-linkedin fa-2x"></i></a>
+        <a href="https://github.com/wowthedoge"><i class="fa fa-github fa-2x"></i></a>
+        <a href="mailto:honggggg2023@gmail.com"><i class="fa fa-envelope fa-2x"></i></a>
+        <a href="https://www.instagram.com/kahhong01/"><i class="fa fa-instagram fa-2x"></i></a>
+      </div>
     </div>
-    <form id="contact-form">
+    <!-- <form id="contact-form">
       <input type="text" placeholder="NAME"></input>
-      <input type="text" placeholder="EMAIL"></input>
-      <input placeholder="MESSAGE"></input>
+      <input type="text" placeholder="EMAIL" required></input>
+      <input placeholder="MESSAGE" required></input>
       <button> SEND MESSAGE </button>
-    </form>
+    </form> -->
   </section>
 
   <hr />

@@ -3,6 +3,7 @@
 $background-color: #151515;
 $accent-green: #5bd8a1;
 $accent-grey: #9c9c9c;
+html{scroll-behavior:smooth}
 body {
   padding: 0;
   margin: 0;
@@ -14,26 +15,50 @@ body {
   box-sizing: border-box;
 }
 
-@media screen and (max-width: 767px) {
-  header {
+header {
+  padding: 0 12%;
+  display: flex;
+  align-items: center;
+  gap: 20%;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(21, 21, 21, 1),
+    rgba(0, 0, 0, 0)
+  );
+  position: sticky;
+  top: 0;
+
+  ul {
     display: flex;
     align-items: center;
-    padding-left: 50px;
-    padding-right: 50px;
-    gap: 20%;
+    justify-content: space-between;
+    width: 100%;
+    list-style: none;
 
-    ul {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      list-style: none;
-
-      li {
+    li {
+      a {
+        display: inline-block;
         text-decoration: none;
+        color: white;
+
+        &::after {
+          content: "";
+          display: block;
+          width: 0;
+          height: 2px;
+          background: $accent-green;
+          transition: width 0.3s;
+        }
+        &:hover::after {
+          width: 100%;
+        }
       }
     }
   }
+}
+
+@media screen and (max-width: 767px) {
+  
 
   #home {
     padding: 50px;
@@ -82,6 +107,21 @@ body {
         letter-spacing: 0.1em;
         font-weight: 500;
       }
+
+      .icon-list {
+        display: flex;
+        gap: 2em;
+        margin: 3em 0;
+
+        a {
+          color: white;
+          transition: 0.5s;
+          
+          &:hover {
+            transform: scale(1.2,1.2);
+          }
+        }
+      }
     }
   }
 
@@ -124,6 +164,7 @@ body {
     align-items: center;
     margin-top: 40px;
     margin-bottom: 40px;
+    padding: 0 5%;
 
     h2 {
       font-weight: 700;
@@ -131,25 +172,39 @@ body {
       margin-bottom: 70px;
     }
 
-    .project-list {
+    #current-and-future {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-top: 50px;
+    }
 
+    .project-list {
       .project-list-row {
         display: flex;
         flex-direction: column;
         align-items: center;
         .project {
-          width: 90%;
+          width: 100%;
           margin-bottom: 40px;
-          height: 600px;
           display: flex;
           flex-direction: column;
 
           img {
             width: 100%;
-            object-fit: fill;
-            object-position: center;
+            max-height: 500px;
+            object-fit: cover;
+            object-position: center bottom;
             display: block;
             overflow: hidden;
+          }
+
+          .no-pic {
+            width: 100%;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: black;
           }
 
           h3 {
@@ -168,6 +223,13 @@ body {
               color: $accent-grey;
               font-size: 1.3rem;
             }
+          }
+
+          a {
+            text-decoration: none;
+            color: $accent-grey;
+            font-size: 1.3rem;
+            font-weight: 700;
           }
         }
       }
@@ -206,14 +268,29 @@ body {
         font-size: 2.7rem;
         margin-bottom: 0px;
       }
-      
+
       p {
         text-align: center;
         color: $accent-grey;
         font-size: 1.2rem;
       }
+
+      .icon-list {
+        display: flex;
+        gap: 2em;
+        margin: 3em 0;
+
+        a {
+          color: white;
+          transition: 0.5s;
+          
+          &:hover {
+            transform: scale(1.2,1.2);
+          }
+        }
+      }
     }
-      
+
     #contact-form {
       padding: 0 10%;
       margin-top: 30px;
@@ -260,32 +337,6 @@ body {
 }
 
 @media screen and (min-width: 768px) {
-  header {
-    padding: 0 12%;
-    display: flex;
-    align-items: center;
-    gap: 20%;
-    background-image: linear-gradient(
-      to bottom,
-      rgba(21, 21, 21, 1),
-      rgba(0, 0, 0, 0)
-    );
-    position: sticky;
-    top: 0;
-  }
-
-  ul {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    list-style: none;
-
-    li {
-      text-decoration: none;
-    }
-  }
-
   #home {
     padding-left: 12%;
     padding-right: 12%;
@@ -331,6 +382,21 @@ body {
         border-bottom: 3px solid $accent-green;
         letter-spacing: 0.1em;
         font-weight: 500;
+      }
+      
+      .icon-list {
+        display: flex;
+        gap: 2em;
+        margin: 3em 0;
+
+        a {
+          color: white;
+          transition: 0.5s;
+          
+          &:hover {
+            transform: scale(1.2,1.2);
+          }
+        }
       }
     }
   }
@@ -378,11 +444,17 @@ body {
       margin-bottom: 70px;
     }
 
+    #current-and-future {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-top: 80px;
+      text-align: center;
+    }
+
     .project-list {
       display: flex;
       flex-direction: column;
       gap: 70px;
-
 
       .project-list-row {
         display: flex;
@@ -392,17 +464,26 @@ body {
 
         .project {
           width: 50%;
-          height: 600px;
           min-height: 0;
           display: flex;
           flex-direction: column;
 
           img {
             width: 100%;
-            object-fit: fill;
-            object-position: center;
+            max-height: 450px;
+            object-fit: cover;
+            object-position: center bottom;
             display: block;
             overflow: hidden;
+          }
+
+          .no-pic {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: black;
           }
 
           h3 {
@@ -422,16 +503,25 @@ body {
               font-size: 1.3rem;
             }
           }
+
+          a {
+            text-decoration: none;
+            color: $accent-grey;
+            font-size: 1.3rem;
+            font-weight: 700;
+          }
         }
       }
     }
+
+    
   }
 
   #blog {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin: 50px;
+    margin: 50px 0;
+    padding: 0 12%;
     h2 {
       font-weight: 700;
       font-size: 2.7rem;
@@ -454,16 +544,26 @@ body {
         font-size: 3.5rem;
         margin-bottom: 0px;
       }
-  
+
       p {
         color: $accent-grey;
         font-size: 1.2rem;
       }
+      .icon-list {
+        display: flex;
+        gap: 2em;
+        margin: 3em 0;
+
+        a {
+          color: white;
+          transition: 0.5s;
+          
+          &:hover {
+            transform: scale(1.2,1.2);
+          }
+        }
+      }
     }
-
-
-
-    
 
     #contact-form {
       margin-top: 30px;
@@ -486,6 +586,7 @@ body {
 
         &:focus {
           outline: none;
+          border-bottom: 2px solid $accent-green;
         }
       }
 
