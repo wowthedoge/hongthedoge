@@ -3,7 +3,9 @@
 $background-color: #151515;
 $accent-green: #5bd8a1;
 $accent-grey: #9c9c9c;
-html{scroll-behavior:smooth}
+html {
+  scroll-behavior: smooth;
+}
 body {
   padding: 0;
   margin: 0;
@@ -15,50 +17,78 @@ body {
   box-sizing: border-box;
 }
 
-header {
-  padding: 0 12%;
-  display: flex;
-  align-items: center;
-  gap: 20%;
-  background-image: linear-gradient(
-    to bottom,
-    rgba(21, 21, 21, 1),
-    rgba(0, 0, 0, 0)
-  );
-  position: sticky;
-  top: 0;
 
-  ul {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    list-style: none;
-
-    li {
-      a {
-        display: inline-block;
-        text-decoration: none;
-        color: white;
-
-        &::after {
-          content: "";
-          display: block;
-          width: 0;
-          height: 2px;
-          background: $accent-green;
-          transition: width 0.3s;
-        }
-        &:hover::after {
-          width: 100%;
-        }
-      }
-    }
-  }
-}
 
 @media screen and (max-width: 767px) {
+  header.mobile {
+
+    padding: 0 12%;
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+
+    .menu {
+      position: fixed;
+      transform: translateY(-110%);
+      transition: transform 0.2s;
+      top: 0;
+      right: 5%;
+      z-index: 99;
+      background: none;
+      color: white;
+      list-style: none;
+      padding-top: 4rem;
+
+      li {
+        a {
+          font-size: 1.2rem;
+          display: inline-block;
+          text-decoration: none;
+          color: white;
   
+          &::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 2px;
+            background: $accent-green;
+            transition: width 0.3s;
+          }
+          &:hover::after {
+            width: 100%;
+          }
+        }
+      }
+      
+    }
+
+    .showMenu {
+      transform: translateY(0);
+    }
+    
+
+    .closeIcon {
+      display: none;
+    }
+    
+    .hamburger {
+      position: fixed;
+      z-index: 100;
+      top: 1rem;
+      right: 12%;
+      padding: 4px;
+      border: none;
+      color: white;
+      background: none;
+      cursor: pointer;
+    }
+    
+  }
+
+  header.desktop {
+    display: none;
+  }
 
   #home {
     padding: 50px;
@@ -82,6 +112,7 @@ header {
         font-size: 4rem;
         font-weight: 700;
         margin-bottom: 0;
+        text-align: center;
       }
 
       h2 {
@@ -116,9 +147,9 @@ header {
         a {
           color: white;
           transition: 0.5s;
-          
+
           &:hover {
-            transform: scale(1.2,1.2);
+            transform: scale(1.2, 1.2);
           }
         }
       }
@@ -288,9 +319,9 @@ header {
         a {
           color: white;
           transition: 0.5s;
-          
+
           &:hover {
-            transform: scale(1.2,1.2);
+            transform: scale(1.2, 1.2);
           }
         }
       }
@@ -342,6 +373,52 @@ header {
 }
 
 @media screen and (min-width: 768px) {
+
+  header.mobile {
+    display: none;
+  }
+
+  header.desktop {
+    padding: 0 12%;
+    display: flex;
+    align-items: center;
+    gap: 20%;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(21, 21, 21, 1),
+      rgba(0, 0, 0, 0)
+    );
+    position: sticky;
+    top: 0;
+  
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      list-style: none;
+  
+      li {
+        a {
+          display: inline-block;
+          text-decoration: none;
+          color: white;
+  
+          &::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 2px;
+            background: $accent-green;
+            transition: width 0.3s;
+          }
+          &:hover::after {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
   #home {
     padding-left: 12%;
     padding-right: 12%;
@@ -388,7 +465,7 @@ header {
         letter-spacing: 0.1em;
         font-weight: 500;
       }
-      
+
       .icon-list {
         display: flex;
         gap: 2em;
@@ -397,9 +474,9 @@ header {
         a {
           color: white;
           transition: 0.5s;
-          
+
           &:hover {
-            transform: scale(1.2,1.2);
+            transform: scale(1.2, 1.2);
           }
         }
       }
@@ -524,8 +601,6 @@ header {
         }
       }
     }
-
-    
   }
 
   #blog {
@@ -568,9 +643,9 @@ header {
         a {
           color: white;
           transition: 0.5s;
-          
+
           &:hover {
-            transform: scale(1.2,1.2);
+            transform: scale(1.2, 1.2);
           }
         }
       }
